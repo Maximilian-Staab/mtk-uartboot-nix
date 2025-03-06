@@ -19,6 +19,7 @@ in
   packages = with pkgs; [ 
     git 
     mtk_uartboot
+    atftp
   ];
 
   # https://devenv.sh/languages/
@@ -36,6 +37,15 @@ in
     git --version
     mtk_uartboot --help
   '';
+
+  scripts = {
+    ftp.exec = ''
+      sudo ${pkgs.atftp}/bin/atftpd --daemon --no-fork --logfile - ./
+    '';
+    flash.exec = ''
+      mtk_uartboot -s $1 --aarch64 -p mt7986-ram-ddr4-bl2.bin -f *-ubootmod-bl31-uboot.fip
+    '';
+  };
 
   # https://devenv.sh/pre-commit-hooks/
   # pre-commit.hooks.shellcheck.enable = true;
