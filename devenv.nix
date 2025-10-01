@@ -9,7 +9,7 @@ let
       rev = "v0.1.1";
       sha256 = "sha256-mwwm2TVBfOEqvQIP0Vl4Q2SkcZxX1JP7rShmjaY+pWE=";
     };
-    cargoHash = "sha256-uS4ESPWMJ1JIKvszA3oVlBIHoG2WzT5+W/9KCjKk+6s=";
+    cargoHash = "sha256-DtYCSPcyLDYeo9fIQpHGdm5r6ijRAzsDExWcDuSvh/o=";
   };
 in 
 {
